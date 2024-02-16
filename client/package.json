@@ -1,5 +1,5 @@
 {
-  "name": "project3",
+  "name": "journmey",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{html, js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "prettier": "^3.2.5",
+    "@vitejs/plugin-react": "^4.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
