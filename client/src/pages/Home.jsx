@@ -1,5 +1,6 @@
 import React from 'react'
 import cities from '../components/cities'
+import Leafletmap from '../components/Leafletmap';
 
 function home() {
 
@@ -22,6 +23,12 @@ function home() {
         <h2 className='text-4xl m-5'>Welcome to JournMEy</h2>
         <img src='./images/pinMap1.jpeg' className='rounded-2xl'/>
       </div>
+
+    <div className='map-area'>
+      <Leafletmap>
+
+      </Leafletmap>
+    </div>
 
       {/* container for list of cities and reviews */}
         <div className='flex flex-col items-center w-[70%] mt-10 overflow-auto'>
