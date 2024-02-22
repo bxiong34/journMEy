@@ -1,0 +1,247 @@
+[
+  {
+    "Name": "John Smith",
+    "City": "New York City",
+    "Review": "Great city with vibrant atmosphere and diverse culinary scene!",
+    "Rating": 5,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Emily Johnson",
+    "City": "Los Angeles",
+    "Review": "Amazing city with beautiful beaches and endless dining options.",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Michael Brown",
+    "City": "Chicago",
+    "Review": "Decent city but could improve on hospitality and culinary experiences.",
+    "Rating": 3,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Emma Davis",
+    "City": "Houston",
+    "Review": "Cozy city with warm hospitality, although culinary experiences are average.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Daniel Wilson",
+    "City": "Phoenix",
+    "Review": "Excellent city with delicious food and friendly service. Worth revisiting!",
+    "Rating": 4,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Olivia Martinez",
+    "City": "Philadelphia",
+    "Review": "Lovely city with inviting ambiance and delightful cuisine. Highly recommended.",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Matthew Taylor",
+    "City": "San Antonio",
+    "Review": "Average city, but the people are very courteous.",
+    "Rating": 3,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Sophia Anderson",
+    "City": "San Diego",
+    "Review": "Outstanding city with mouthwatering dishes and exceptional service. A must-visit!",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Ethan Thomas",
+    "City": "Dallas",
+    "Review": "Disappointing city in terms of culinary experiences. Food quality is below par.",
+    "Rating": 2,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Ava White",
+    "City": "San Jose",
+    "Review": "Fantastic city with amazing food and great ambiance. Definitely worth returning.",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Noah Garcia",
+    "City": "Austin",
+    "Review": "The city offers delicious food, but the service can be slow.",
+    "Rating": 4,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Isabella Rodriguez",
+    "City": "Jacksonville",
+    "Review": "Decent city for a quick bite, but lacks extraordinary culinary experiences.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Mason Martinez",
+    "City": "Fort Worth",
+    "Review": "Friendly city, but food quality needs improvement.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Avery Hernandez",
+    "City": "Columbus",
+    "Review": "Average city. Expected more from the dining scene.",
+    "Rating": 3,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Sofia Perez",
+    "City": "Charlotte",
+    "Review": "Good food, but the city's prices are a bit high for the portion size.",
+    "Rating": 4,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Elijah Gonzales",
+    "City": "Indianapolis",
+    "Review": "Great city with a wide selection of dishes and attentive service.",
+    "Rating": 4,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Scarlett Nguyen",
+    "City": "Seattle",
+    "Review": "The city offers excellent food, but the ambiance is lacking.",
+    "Rating": 4,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Logan King",
+    "City": "Denver",
+    "Review": "Great city but Mediocre food and slow service. Prices are too high.",
+    "Rating": 2,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Lily Campbell",
+    "City": "Washington",
+    "Review": "Delicious food with a wide variety of options. A city worth revisiting soon.",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Benjamin Evans",
+    "City": "Boston",
+    "Review": "Overrated city. Culinary experiences are bland, and service is slow.",
+    "Rating": 2,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Amelia Turner",
+    "City": "Nashville",
+    "Review": "Good food, but the city's atmosphere could be more inviting.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Jayden Parker",
+    "City": "Baltimore",
+    "Review": "Great city with excellent service and delicious food. Highly recommend.",
+    "Rating": 5,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Madison Bell",
+    "City": "Louisville",
+    "Review": "Decent city, but nothing extraordinary in terms of culinary experiences.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Gabriel Diaz",
+    "City": "Portland",
+    "Review": "Excellent city with delicious food and attentive staff. A delightful dining experience.",
+    "Rating": 5,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Natalie Reyes",
+    "City": "Oklahoma City",
+    "Review": "Good food and friendly service. Enjoyed the overall experience in this city.",
+    "Rating": 4,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Dylan Stewart",
+    "City": "Las Vegas",
+    "Review": "Amazing city with incredible food and great atmosphere. A definite must-visit!",
+    "Rating": 5,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Evelyn Sanchez",
+    "City": "Milwaukee",
+    "Review": "Decent city, but service in restaurants was a bit slow. Could improve.",
+    "Rating": 3,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Jackson Cruz",
+    "City": "Albuquerque",
+    "Review": "Delicious food, but the wait time in restaurants was too long in this city.",
+    "Rating": 4,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Harper Flores",
+    "City": "Tucson",
+    "Review": "Great city with delicious food and attentive service. A pleasant dining experience.",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Zoe Howard",
+    "City": "Fresno",
+    "Review": "Delicious food and cozy atmosphere. Loved the dining scene in this city!",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Levi Ward",
+    "City": "Sacramento",
+    "Review": "Good food, but the service in restaurants was a bit lacking. Overall decent experience.",
+    "Rating": 3,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Aria Rivera",
+    "City": "Kansas City",
+    "Review": "Average city with slow service in restaurants. Expected better quality.",
+    "Rating": 2,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Ellie Brooks",
+    "City": "Long Beach",
+    "Review": "Amazing city with excellent food and service. Will definitely return!",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  },
+  {
+    "Name": "Luke Cooper",
+    "City": "Mesa",
+    "Review": "The city offers okay food, but the service was disappointing.",
+    "Rating": 2,
+    "ProfilePic": "./images/M-avatar.jpeg"
+  },
+  {
+    "Name": "Grace Hayes",
+    "City": "Atlanta",
+    "Review": "Delicious food and prompt service. A great dining experience in this city!",
+    "Rating": 5,
+    "ProfilePic": "./images/F-avatar.jpeg"
+  }
+]
