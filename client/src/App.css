@@ -1,3 +1,4 @@
+
 /*  Sizing of Map Container Leaflet */
 .leaflet-container {
     height: 50vh;
@@ -17,3 +18,13 @@
     font-size: 1.5rem;
     color: black;
   }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+

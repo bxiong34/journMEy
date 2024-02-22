@@ -1,20 +1,32 @@
 const typeDefs = `
-  // model type  {
+  type User {
     _id: ID!
-
+    email: String!
+    username: String!
+    reviews: [Review!]!
   }
 
-  // model type  {
+  type Review {
     _id: ID!
+    username: String!
+    review: String!
+    rating: Int!
+  }
 
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-
+    user(id: ID!): User
   }
 
   type Mutation {
-
+    addUser(email: String!, username: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    # add new review
+    addReview(username: String!, review: String!, rating: Int!): Review
   }
 `;
 
