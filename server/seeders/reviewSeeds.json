@@ -1,0 +1,38 @@
+[
+  { 
+    "username": "user1",
+    "review": "Olbrich Botanical Gardens: Love nature! Plenty of trees to take pictures with. Nice long walk around the garden", 
+    "rating": "4",
+    "createdAt": "January 15, 2023"
+  },
+  {
+    "username": "user2",
+    "review": "Moody",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user3",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user4",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user5",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user6",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  }
+]
