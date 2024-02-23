@@ -1,26 +1,90 @@
 [
-    {
-        "geocode": [48.86, 2.3522],
-        "popUp": "This place is awesome!"
-      },
-      {
-        "geocode": [48.85, 2.3522],
-        "popUp": "This place is wild!"
-      },
-      {
-        "geocode": [48.855, 2.34],
-        "popUp": "This place is amazing!"
-      },
-      {
-        "geocode": [48.8734, 2.3680],
-        "popUp": "Ate so much Crossant had to go to the hospital!"
-      },
-      {
-        "geocode": [43.0722, -89.4008],
-        "popUp": "This place is meh!"
-      },
-      {
-        "geocode": [43.0752, -89.3842],
-        "popUp": "CapiTOOOL!"
-      }  
+  {
+    "geocode": [43.0752, -89.3842],
+    "popUp": "Very beautiful and huge place! The capitol is full of majesty and history of Wisconsin.  Mosaics and marble columns are impressive.  If you climb to the viewing area (terrace) you can see a large part of Madison.  It's very beautiful!"
+  },
+  {
+    "geocode": [43.08983329874443, -89.415530468425],
+    "popUp": "It is basically at the end of the trail. [...] Picnic point have the view of madison skyline. you will also enjoy the waves of lake mendota. So it very much close to nature. I really enjoyed it."
+  },
+  {
+    "geocode": [43.046177546360944, -87.89091189897395],
+    "popUp": "Nice scenic park. You can rent pedal (swan) boats, tandem bicycles, and pedal carts to ride. There are many benches along the bike/walk path to sit and enjoy the lake and watch the sailboats. Plenty of free parking space. Enjoyed a sunny afternoon here with my husband."
+  },
+  {
+    "geocode": [42.61779139761807, -73.93585564675098],
+    "popUp": "Very popular spot. Very nice for children with the huge playground. The lake and ducks are very cute. The view is magical in the center of the city. One of the best attraction. There is ice skating during winter."
+  },
+  {
+    "geocode": [37.92388861156849, -122.48622111430889],
+    "popUp": "The trip to the Golden Gate Bridge was amazing! The iconic red-orange structure against the blue sky was breathtaking. Walking along the bridge offered stunning views of San Francisco and the bay."
+  },
+  {
+    "geocode": [44.55231348911062, -124.10865936012536],
+    "popUp": "Thor's Well is a mesmerizing coastal phenomenon along the Oregon coastline, where the ocean seemingly drains into a gaping sinkhole, creating a natural spectacle. The well's cyclical ebb and flow, accentuated during high tide and stormy weather, make it a captivating display of the sea's power."
+  },
+  {
+    "geocode": [41.4589236205633, -70.80991842407488],
+    "popUp": "Beautiful beautiful place. Highly recommended to visit the beach and the cliffs if you are on the island. It is beautiful during the sunset."
+  },
+  {
+    "geocode": [-19.81749241110694, -41.13526967971574],
+    "popUp": "Pedra Azul State Park in Espírito Santo, Brazil, is a magnificent natural reserve that offers visitors an opportunity to immerse themselves in the beauty and diversity of Brazil's flora and fauna. "
+  },
+  {
+    "geocode": [-33.80653800734968, -58.46298301109996],
+    "popUp": "A wonderful, beautiful, peaceful and inspiring little world, brought by Japan, Argentina and the amazing power of nature."
+  },
+  {
+    "geocode": [-29.13296951897507, 29.002443847692],
+    "popUp": "The happiest place on earth. A truly Cinematic landscape and beautiful views of the hole and surrounding mountains and ocean and oceanic cliffs. Almost certain this is where happiness is made."
+  },
+  {
+    "geocode": [42.528702622236786, 12.23912589445061],
+    "popUp": "This fountain is so beautiful, the actual structure is breathtaking but the crowds really hinder your experience. It is so unbelievably crowded here at all hours except for probably 1am - 5am."
+  },
+  {
+    "geocode": [24.337086898345145, 75.45410113365861],
+    "popUp": "Nice Natural waterfall in the periphery of Indore. Best part is good concrete road which is accessible for both two and four wheelers. There are too rush on weekends. Visit during monsoon."
+  },
+  {
+    "geocode": [13.134135716844865, 100.806393195354],
+    "popUp": "Must visit this place, if you love white sand beaches with clear green water. Many water activities are available here. Take a ferry or speed boat to reach here."
+  },
+  {
+    "geocode": [11.032863941445697, 123.10065243855804],
+    "popUp": "The place is romantic except that it has many visitors. The lights they installed in the structure give life to the ruins."
+  },
+  {
+    "geocode": [-32.68258694036513, 149.92095415571646],
+    "popUp": "Breathtaking destination that is an absolute must-visit! The Blue Mountains unfold in a truly spectacular display of nature's beauty. The hiking trails offer a diverse and meticulously planned experience, making every step a joy. "
+  },
+  {
+    "geocode": [46.726212446780615, 7.880555463222603],
+    "popUp": "Beautiful place to see the falls or to walk around and appreciate the beautiful scenery. There is parking nearby, only 3-4€ per hour and a lot of spaces available."
+  },
+  {
+    "geocode": [29.923328893448343, 77.24054098130112],
+    "popUp": "Interesting architectural building, Inspired by a lotus flower, hence the name. It's surrounded by some nice gardens leading up to the temple. Be aware that you must take your shoes off and put them in a bag walking up to the temple. Inside there are no pictures or talking allowed. Not a very picturesque place inside, but a good place to pray or meditate."
+  },
+  {
+    "geocode": [33.38043709150044, 126.56269842784943],
+    "popUp": "Beautiful landscapes. Small island, a bit of the same on all beaches. Hiking hallasan is not as easy as they make it seem, be careful."
+  },
+  {
+    "geocode": [35.70261100728735, 139.77348259517953],
+    "popUp": "Embracing the rush, the speed, and the untamed spirit of go karting with our new friends at Street Kart Akihabara. Had a wonderful adventure with the staff members, come and feel the wind through your hair (if you have any) and enjoy the new family you obtain once you step into their doors!!"
+  },
+  {
+    "geocode": [37.921535804809054, -107.83817403328685],
+    "popUp": "Telluride never disappoints! Cool temps mean good snow! Stay cool Telluride! Bring the proper gear and enjoy what Telluride offers! Oh and if you have time grab lunch at Alpino Vino, wow!"
+  },
+  {
+    "geocode": [10.167672102431542, -2.0070623926901088],
+    "popUp": "Mole National Park 🏞️ is the biggest protected area in Ghana 🇬🇭 with a total land area of 4577km2. It is home to various wildlife species and a perfect spot for research, vacation, and other activities."
+  },
+  {
+    "geocode": [52.65306184071525, -116.13868134364742],
+    "popUp": "Absolutely amazing 😍😍 and definitely worth to visit!  The hikes are beautiful and the campgrounds are good as well :) I wouldn't want to skip this Nationalpark!"
+  }
 ]
