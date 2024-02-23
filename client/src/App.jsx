@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Account from './pages/Account';
+import Leafletmap from './pages/Leafletmap';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/map' element={<Leafletmap />} />
       { /* {isLoggedIn ? <Route path='/account' element={<Account />} /> : null} */ }
       </Routes>
     </div>

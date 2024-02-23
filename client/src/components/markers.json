@@ -1,0 +1,26 @@
+[
+    {
+        "geocode": [48.86, 2.3522],
+        "popUp": "This place is awesome!"
+      },
+      {
+        "geocode": [48.85, 2.3522],
+        "popUp": "This place is wild!"
+      },
+      {
+        "geocode": [48.855, 2.34],
+        "popUp": "This place is amazing!"
+      },
+      {
+        "geocode": [48.8734, 2.3680],
+        "popUp": "Ate so much Crossant had to go to the hospital!"
+      },
+      {
+        "geocode": [43.0722, -89.4008],
+        "popUp": "This place is meh!"
+      },
+      {
+        "geocode": [43.0752, -89.3842],
+        "popUp": "CapiTOOOL!"
+      }  
+]
