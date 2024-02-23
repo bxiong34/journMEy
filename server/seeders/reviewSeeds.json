@@ -1,12 +1,36 @@
 [
   { 
-    "username": "Ana I. Romero",
-    "review": "Olbrich Botanical Gardens. Given the time of the year I visited it, there wasn’t much to see outside, but it was still nice and peaceful (I would definitely visit again during spring or summer). The bright side was the indoor tropical exhibit, where there are different plants and birds. Don’t forget to visit the rooftop! Free parking.", 
-    "rating": "5",
-    "createdAt": "February 1, 2024"
+    "username": "user1",
+    "review": "Olbrich Botanical Gardens: Love nature! Plenty of trees to take pictures with. Nice long walk around the garden", 
+    "rating": "4",
+    "createdAt": "January 15, 2023"
   },
   {
-    "username": "",
+    "username": "user2",
+    "review": "Moody",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user3",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user4",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user5",
+    "review": "",
+    "rating": "",
+    "createdAt": ""
+  },
+  {
+    "username": "user6",
     "review": "",
     "rating": "",
     "createdAt": ""
