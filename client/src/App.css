@@ -1,15 +1,15 @@
 
 /*  Sizing of Map Container Leaflet */
 .leaflet-container {
-    height: 50vh;
-    width: 50vh;
+    height: 75rem;
+    width: 75rem;
   }
 
   .cluster-icon {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    background-color: red;
+    background-color: darkred;
     transform: translate(-20%, -20%);
     display: flex;
     justify-content: center;

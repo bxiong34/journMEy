@@ -26,6 +26,7 @@ function Navbar() {
       <Link to='/signup'>Sign Up</Link>
         </>
       )} */}
+      <Link to='/map'>Map</Link>
       <Link to='/login'>Login</Link>
       <Link to='/signup'>Sign Up</Link>
       </ul>
@@ -34,3 +35,15 @@ function Navbar() {
 }
 
 export default Navbar
+
+ {/* {isLoggedIn ? (
+        <>
+          <Link to='/account'>Account</Link>
+          <li><button onClick={handleSignOut}>Sign Out</button></li>
+        </>
+      ) : (
+        <>
+        <Link to='/login'>Login</Link>
+      <Link to='/signup'>Sign Up</Link>
+        </>
+      )} */}
