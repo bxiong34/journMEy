@@ -1,49 +1,34 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import Auth from '../utils/auth'
+import { Link } from 'react-router-dom'
+
 
 function Navbar() {
-  // const isLoggedIn = localStorage.getItem('token');
-  // const navigate = useNavigate();
-
-  // const handleSignOut = () => {
-  //  localStorage.removeItem('token');
-  //  navigate('/login');
-  //}
-
-  return (
-    <nav className='flex justify-around p-3 border-b border-zinc-800 bg-[#1a1a1a]/90 text-zinc-100'>
-      
-      <Link to='/'><h1 className='text-2xl'>Home</h1></Link>
-      <ul className='flex gap-6'>
-      {/* {isLoggedIn ? (
-        <>
-          <Link to='/account'>Account</Link>
-          <li><button onClick={handleSignOut}>Sign Out</button></li>
-        </>
-      ) : (
-        <>
-        <Link to='/login'>Login</Link>
-      <Link to='/signup'>Sign Up</Link>
-        </>
-      )} */}
-      <Link to='/map'>Map</Link>
-      <Link to='/login'>Login</Link>
-      <Link to='/signup'>Sign Up</Link>
+  if(Auth.loggedIn()) {
+    return (
+      <nav className='flex justify-around p-3 border-b border-zinc-800 bg-[#1a1a1a]/90 text-zinc-100'>
+        <Link to='/'>Home</Link>
+      <ul className='flex flex-row items-center'>
+        <li><Link to='/map'>Map</Link></li>
+        <li><Link to='/account'>Account</Link></li>
+        <li className="mx-1">
+            <a href="/" onClick={() => Auth.logout()}>
+              Logout
+            </a>
+          </li>
       </ul>
-    </nav>
-  )
+      </nav>
+    )
+  } else {
+    return (
+      <nav  className='flex justify-around p-3 border-b border-zinc-800 bg-[#1a1a1a]/90 text-zinc-100'>
+        <Link to='/'>Home</Link>
+      <ul className='flex flex-row items-center justify-around'>
+        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/signup'>Sign Up</Link></li>
+      </ul>
+      </nav>
+    )
+  }
 }
 
 export default Navbar
-
- {/* {isLoggedIn ? (
-        <>
-          <Link to='/account'>Account</Link>
-          <li><button onClick={handleSignOut}>Sign Out</button></li>
-        </>
-      ) : (
-        <>
-        <Link to='/login'>Login</Link>
-      <Link to='/signup'>Sign Up</Link>
-        </>
-      )} */}
