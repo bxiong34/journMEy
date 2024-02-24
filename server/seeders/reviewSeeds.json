@@ -1,38 +1,38 @@
 [
-    { 
-      "username": "user1",
-      "review": "Olbrich Botanical Gardens: Love nature! Plenty of trees to take pictures with. Nice long walk around the garden", 
-      "rating": "4",
-      "createdAt": "January 15, 2023"
-    },
-    {
-      "username": "user2",
-      "review": "Moody",
-      "rating": "",
-      "createdAt": ""
-    },
-    {
-      "username": "user3",
-      "review": "",
-      "rating": "",
-      "createdAt": ""
-    },
-    {
-      "username": "user4",
-      "review": "",
-      "rating": "",
-      "createdAt": ""
-    },
-    {
-      "username": "user5",
-      "review": "",
-      "rating": "",
-      "createdAt": ""
-    },
-    {
-      "username": "user6",
-      "review": "",
-      "rating": "",
-      "createdAt": ""
-    }
-  ]
+  {
+    "username": "user1",
+    "review": "Milwaukee, WI: Its scenic waterfront, vibrant neighborhoods, and renowned breweries make it a must-visit destination. From cultural attractions to lively festivals, Milwaukee offers something for everyone.",
+    "rating": 4,
+    "createdAt": "January 15, 2024"
+  },
+  {
+    "username": "user1",
+    "review": "Washington Island, Wisconsin: is a serene escape offering natural beauty and tranquility. With its picturesque landscapes, charming shops, and peaceful atmosphere, it's the perfect destination for relaxation and rejuvenation.",
+    "rating": 5,
+    "createdAt": "July 8, 2023"
+  },
+  {
+    "username": "user2",
+    "review": "Charleston, South Carolina: Enchants visitors with its historic charm, cobblestone streets, and vibrant culinary scene. From strolling through the picturesque waterfront to exploring its rich cultural heritage, Charleston offers a delightful blend of Southern hospitality and timeless elegance.",
+    "rating": 4,
+    "createdAt": "January 3, 2024"
+  },
+  {
+    "username": "user2",
+    "review": "Savannah, Georgia: This charming Southern city invites exploration with its cobblestone streets, scenic riverfront, and renowned hospitality, offering a glimpse into the past with modern flair.",
+    "rating": 4,
+    "createdAt": "May 24, 2023"
+  },
+  {
+    "username": "user3",
+    "review": "Portland, Oregon: From quirky neighborhoods to artisanal coffee shops and food carts, this Pacific Northwest gem exudes a laid-back vibe and a passion for sustainability, making it a haven for foodies, outdoor enthusiasts, and creatives alike.",
+    "rating": 3,
+    "createdAt": "December 20, 2023"
+  },
+  {
+    "username": "user3",
+    "review": "Nashville, Tennessee: From honky-tonk bars on Broadway to historic landmarks like the Grand Ole Opry, this vibrant city offers a blend of musical heritage, culinary delights, and cultural experiences that leave visitors tapping their toes and yearning for more.",
+    "rating": 3,
+    "createdAt": "September 19, 2023"
+  }
+]
