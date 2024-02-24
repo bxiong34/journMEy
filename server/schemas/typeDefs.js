@@ -21,13 +21,16 @@ const typeDefs = `
   type Query {
     getUser(id: ID!): User
     getAllUsers: [User]
+    getUserReviews(userId: ID!): [Review!]!
   }
 
   type Mutation {
+    #add new user
     addUser(email: String!, username: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+
     # add new review
-    addReview(username: String!, review: String!, rating: Int!): Review
+    addReview(userId: ID!, review: String!, rating: Int!): Review
   }
 `;
 

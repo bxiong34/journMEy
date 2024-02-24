@@ -1,23 +1,23 @@
 
 /*  Sizing of Map Container Leaflet */
 .leaflet-container {
-    height: 75rem;
-    width: 75rem;
+    height: 100%;
+    width: 100%;
   }
 
-  .cluster-icon {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    background-color: darkred;
-    transform: translate(-20%, -20%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-    font-size: 1.5rem;
-    color: black;
-  }
+.cluster-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: darkred;
+  transform: translate(-20%, -20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: black;
+}
 
 @keyframes scroll {
   0% {
