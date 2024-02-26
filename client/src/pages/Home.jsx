@@ -19,7 +19,7 @@ function home() {
       <div className="w-[70%] flex-row justify-around items-center mt-10">
         <h2 className="text-4xl m-5 text-center">JournMEy Around the World!</h2>
         <div className=" flex-row">
-          <img src="./images/homemap.png" class="rounded-2xl" alt="Map Image" />
+          <img src="./images/homemap.png" className="rounded-2xl" alt="Map Image" />
           {/* container for list of cities and reviews */}
           <div className="items-center w-[70%] mt-10 ">
             <div

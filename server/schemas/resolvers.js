@@ -4,11 +4,11 @@ const { signToken, AuthenticationError } = require('../utils /auth');
 const resolvers = {
   Query: {
     getUser: async (parent, args) => {
-      return await User.findById(args.id).populate('review');
+      return await User.findById(args.id).populate('reviews'); 
     },
     getAllUsers: async () => {
       try {
-        const users = await User.find().populate('review');
+        const users = await User.find().populate('reviews');
         return users;
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -19,12 +19,22 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
-    const token = signToken(user);
+      const token = signToken(user);
 
       return { token, user };
     },
     addReview: async (parent, { username, review, rating }) => {
-      return await Review.create({ username, review, rating });
+      // create new review
+      const newReview = await Review.create({ username, review, rating });
+
+      // find user by username and update the reviews array
+      const user = await User.findOneAndUpdate(
+        { username },
+        { $push: { reviews: newReview._id } },
+        { new: true }
+      );
+
+      return newReview;
     },
     login: async (_, { email, password }) => {
       // find user in the database

@@ -8,7 +8,7 @@
   {
     "geocode": [40.71471708104719, -74.00034064419208],
     "cityName": "New York City, New York",
-    "review1": "New York City, the city that never sleeps, pulsates with diversity and dynamism. From Broadway shows to world-class museums like the Metropolitan Museum of Art, there's no shortage of cultural experiences. - Xiao Wong",
+    "review1": "New York City, the city that never sleeps, pulsates with diversity and dynamism. From Broadway shows to museums like the Metropolitan Museum of Art, there's no shortage of cultural experiences. - Xiao Wong",
     "review2": "In New York City, every neighborhood has its own distinct flavor, from the trendy boutiques of SoHo to the historic brownstones of Brooklyn Heights. The skyline views from the Top of the Rock and Statue of Liberty are simply breathtaking. - Aya Khan"
   },
   {
@@ -81,13 +81,13 @@
     "geocode": [51.50254161434068, -0.12911281626053506],
     "cityName": "London, United Kingdom",
     "review1": "Where history comes to life. From the iconic landmarks of Big Ben and Buckingham Palace to the charming streets of Notting Hill, this city offers a delightful blend of old-world charm and modern sophistication. - Haruki Suzuki",
-    "review2": "A melting pot of culture and diversity. Explore world-class museums, savor international cuisines in bustling markets, and immerse yourself in the vibrant theater scene of the West End. With its iconic skyline and bustling streets, London is a city that never fails to enchant. - James Smith"
+    "review2": "A melting pot of culture and diversity. Explore museums, savor international cuisines in bustling markets, and immerse yourself in the vibrant theater scene of the West End. With its iconic skyline and bustling streets, London is a city that never fails to enchant. - James Smith"
   },
   {
     "geocode": [46.20446618760161, 6.1442396144625775],
     "cityName": "Geneva, Switzerland",
     "review1": "A picturesque city where history meets modernity. Explore the charming Old Town, marvel at the Jet d'Eau fountain, and indulge in exquisite Swiss chocolates. With its stunning lakefront views and cosmopolitan atmosphere, Geneva is a true gem of Switzerland. - Emma Blanc",
-    "review2": "A global city of diplomacy and culture. Wander through the United Nations headquarters, discover world-class museums, and enjoy a leisurely cruise on Lake Geneva. With its blend of natural beauty and international influence, Geneva offers a captivating experience for visitors. - Thomas Müller"
+    "review2": "A global city of diplomacy and culture. Wander through the United Nations headquarters, discover museums, and enjoy a leisurely cruise on Lake Geneva. With its blend of natural beauty and international influence, Geneva offers a captivating experience for visitors. - Thomas Müller"
   },
   {
     "geocode": [34.047352614527796, -118.2428842664915],
@@ -116,13 +116,13 @@
   {
     "geocode": [37.937948566066964, -107.81258851154158],
     "cityName": "Telluride, Colorado",
-    "review1": "A hidden gem nestled in the heart of the Rockies. From the world-class skiing and snowboarding in the winter to the vibrant festivals and outdoor adventures in the summer, Telluride offers a picturesque escape for nature enthusiasts and thrill-seekers alike. - Mia Johnson",
+    "review1": "A hidden gem nestled in the heart of the Rockies. From skiing and snowboarding in the winter to the vibrant festivals and outdoor adventures in the summer, Telluride offers a picturesque escape for nature enthusiasts and thrill-seekers alike. - Mia Johnson",
     "review2": "Where charm meets adventure at every altitude. Explore the charming streets lined with historic Victorian buildings, hike through breathtaking alpine meadows, and take in the stunning views of the San Juan Mountains. In Telluride, every moment is an opportunity for discovery and awe. - Juan Garcia"
   },
   {
     "geocode": [49.285035399109994, -123.11772744011758],
     "cityName": "Vancouver, British Columbia",
-    "review1": "A city that inspires wonder at every turn. Explore the lively markets of Granville Island, stroll along the seawall in Stanley Park, and dine at world-class restaurants with breathtaking waterfront views. Vancouver's beauty and diversity make it a destination like no other. - Ahmed Ali",
+    "review1": "A city that inspires wonder at every turn. Explore the lively markets of Granville Island, stroll along the seawall in Stanley Park, and dine at restaurants with breathtaking waterfront views. Vancouver's beauty and diversity make it a destination like no other. - Ahmed Ali",
     "review2": "Where nature's beauty meets urban sophistication. From the stunning views of the North Shore Mountains to the vibrant culture of Yaletown, Vancouver offers a dynamic blend of outdoor adventure and cosmopolitan charm. - Ji-eun Park"
   },
   {
