@@ -22,9 +22,12 @@ function Account() {
       <ul className="pastReviewsList">
         {reviews.map((review, index) => (
           <li key={index}>
-            <strong>Review:</strong> {review.review}<br />
-            <strong>Rating:</strong> {review.rating}<br />
-            <strong>Created At:</strong> {new Date(review.createdAt).toLocaleDateString()}
+            <strong>Review:</strong> {review.review}
+            <br />
+            <strong>Rating:</strong> {review.rating}
+            <br />
+            <strong>Created At:</strong>{" "}
+            {new Date(review.createdAt).toLocaleDateString()}
           </li>
         ))}
       </ul>

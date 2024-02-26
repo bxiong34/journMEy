@@ -37,7 +37,7 @@ function Navbar() {
     return (
       <nav className="flex justify-around p-3 border-b border-zinc-800 bg-[#1a1a1a]/90 text-zinc-100">
         <Link to="/">Home</Link>
-        <ul className="flex flex-row items-center justify-around">
+        <ul className="flex items-center space-x-10">
           <li>
             <Link to="/login">Login</Link>
           </li>
