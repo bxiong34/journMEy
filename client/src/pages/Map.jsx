@@ -1,4 +1,5 @@
 import "../App.css";
+import L from "leaflet"; // Import Leaflet library
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Icon, divIcon, point } from "leaflet";
@@ -6,6 +7,11 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import markers from "../components/markers";
 import useGeoLocation from "../components/useGeoLocation";
 import { useRef } from "react";
+import "leaflet-control-geocoder/dist/Control.Geocoder.css";
+import "leaflet-control-geocoder/dist/Control.Geocoder.js";
+import LeafletControlGeocoder from "../components/LeafletControlGeocoder";
+import "leaflet-control-geocoder";
+
 
 const customIcon = new Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/128/9131/9131546.png",
@@ -18,6 +24,12 @@ const createCustomClusterIcon = (cluster) => {
     html: `<div class="cluster-icon">${cluster.getChildCount()}</div>`,
     iconSize: point(33, 33, true),
   });
+};
+
+const addToAccount = (marker) => {
+  // Here, you can implement the logic to add the marker data to the user's account
+  // For demonstration purposes, let's log the marker data to the console
+  console.log("Marker added to account:", marker);
 };
 
 function Leafletmap() {
@@ -57,6 +69,7 @@ function Leafletmap() {
           url="https://tile.jawg.io/jawg-lagoon/{z}/{x}/{y}{r}.png?access-token={accessToken}"
           accessToken="9OHyglPUFdqXritzAZGFb1IXCvZgQBGFArRhOQ819CcqZZfWONdETSlMIIMaDoLU"
         />
+         <LeafletControlGeocoder />
 
         {location.loaded && !location.error && (
           <Marker
@@ -70,19 +83,21 @@ function Leafletmap() {
           iconCreateFunction={createCustomClusterIcon}
         >
           {markers.map((marker, index) => (
-            <Marker key={index} position={marker.geocode} icon={customIcon}>
-              <Popup style={{ paddingLeft: "20px" }}>
-                <strong>{marker.cityName}</strong>
-                <div style={{ marginLeft: "20px" }}>
-                  {marker.review1}
-                  <br />
-                  <br /> {/* Empty line */}
-                  {marker.review2}
-                </div>
-              </Popup>
-            </Marker>
-          ))}
-        </MarkerClusterGroup>
+    <Marker key={index} position={marker.geocode} icon={customIcon}>
+      <Popup style={{ paddingLeft: "20px" }}>
+        <strong>{marker.cityName}</strong>
+        <div style={{ marginLeft: "20px" }}>
+          {marker.review1}
+          <br />
+          <br />
+          {marker.review2}
+          <br />
+          <button onClick={() => addToAccount(marker)} style={{backgroundColor: "#008CBA", color: "white", padding: "10px 20px", borderRadius: "5px", border: "none", display: "block", margin: "10px auto 0",}}>Add to Account</button> {/* Add button */}
+        </div>
+      </Popup>
+    </Marker>
+  ))}
+</MarkerClusterGroup>
       </MapContainer>
 
       <div

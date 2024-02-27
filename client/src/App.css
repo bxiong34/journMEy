@@ -19,6 +19,11 @@
   color: black;
 }
 
+.leaflet-control-geocoder-form input[type="text"] {
+  color: black;
+}
+
+
 @keyframes scroll {
   0% {
     transform: translateY(0);
