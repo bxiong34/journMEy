@@ -26,9 +26,7 @@ const createCustomClusterIcon = (cluster) => {
   });
 };
 
-const addToAccount = (marker) => {
-  // Here, you can implement the logic to add the marker data to the user's account
-  // For demonstration purposes, let's log the marker data to the console
+const addToFavorite = (marker) => {
   console.log("Marker added to account:", marker);
 };
 
@@ -92,7 +90,7 @@ function Leafletmap() {
           <br />
           {marker.review2}
           <br />
-          <button onClick={() => addToAccount(marker)} style={{backgroundColor: "#008CBA", color: "white", padding: "10px 20px", borderRadius: "5px", border: "none", display: "block", margin: "10px auto 0",}}>Add to Account</button> {/* Add button */}
+          <button onClick={() => addToFavorite(marker)} style={{backgroundColor: "#008CBA", color: "white", padding: "10px 20px", borderRadius: "5px", border: "none", display: "block", margin: "10px auto 0",}}>Add to Account</button> {/* Add button */}
         </div>
       </Popup>
     </Marker>
