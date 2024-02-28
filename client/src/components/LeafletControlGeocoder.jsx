@@ -29,10 +29,7 @@ const LeafletControlGeocoder = () => {
     geocoder.on("markgeocode", function (e) {
       const latlng = e.geocode.center;
       map.setView(latlng, 13); // Set the map view to the selected location with a zoom level of 13
-      L.marker(latlng)
-        .addTo(map)
-        .bindPopup(e.geocode.name)
-        .openPopup();
+      L.marker(latlng).addTo(map).bindPopup(e.geocode.name).openPopup();
     });
 
     // Add geocoder control to the map
@@ -43,4 +40,3 @@ const LeafletControlGeocoder = () => {
 };
 
 export default LeafletControlGeocoder;
-

@@ -4,11 +4,12 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Icon, divIcon, point } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import markers from "../components/markers";
 import useGeoLocation from "../components/useGeoLocation";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import LeafletControlGeocoder from "../components/LeafletControlGeocoder";
+import "leaflet-control-geocoder";
+import { reviewSeeds } from "../../../server/seeders/reviewSeeds.json";
 
 const customIcon = new Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/128/9131/9131546.png",
@@ -44,6 +45,18 @@ const addToFavorite = (marker) => {
   setFavorites(updatedFavorites);
   console.log("Marker added to favorites:", marker);
 };
+
+  // grab reviews from seed
+  const groupedReviews = reviewSeeds.reduce((acc, review) => {
+    // check if the city exists
+    if (!acc[review.cityName]) {
+      // if not, initialize it as an empty array
+      acc[review.cityName] = [];
+    }
+    // push review to corresponding city array
+    acc[review.cityName].push(review);
+    return acc;
+  }, {});
 
   const showMyLocation = () => {
     if (mapRef.current && location.loaded && !location.error) {
@@ -83,7 +96,7 @@ const addToFavorite = (marker) => {
           accessToken="9OHyglPUFdqXritzAZGFb1IXCvZgQBGFArRhOQ819CcqZZfWONdETSlMIIMaDoLU"
         />
         <LeafletControlGeocoder />
-
+        {/* show current location */}
         {location.loaded && !location.error && (
           <Marker
             key="currentLocation"
@@ -91,35 +104,27 @@ const addToFavorite = (marker) => {
             position={[location.coordinates.lat, location.coordinates.lng]}
           ></Marker>
         )}
-
+        {/* group nearby markers */}
         <MarkerClusterGroup
           chunkedLoading
           iconCreateFunction={createCustomClusterIcon}
         >
-          {markers.map((marker, index) => (
-            <Marker key={`${marker.id}-${index}`} position={marker.geocode} icon={customIcon}>
-              <Popup style={{ paddingLeft: "20px" }}>
-                <strong>{marker.cityName}</strong>
-                <div style={{ marginLeft: "20px" }}>
-                  {marker.review1}
-                  <br />
-                  <br />
-                  {marker.review2}
-                  <br />
-                  <button
-                    onClick={() => addToFavorite(marker)}
-                    style={{
-                      backgroundColor: "#008CBA",
-                      color: "white",
-                      padding: "10px 20px",
-                      borderRadius: "5px",
-                      border: "none",
-                      display: "block",
-                      margin: "10px auto 0",
-                    }}
-                  >
-                    Add to Account
-                  </button>
+          {/* map over groupedReviews object and render markers for each city */}
+          {Object.entries(groupedReviews).map(([cityName, reviews]) => (
+            <Marker key={cityName} position={reviews[0].geocode}>
+              <Popup>
+                <div>
+                  <h3>
+                    <strong>{cityName}</strong>
+                  </h3>
+                  {reviews.map((review, index) => (
+                    <div key={index}>
+                      <p>
+                        {review.review} Rating: {review.rating} —{" "}
+                        <strong>{review.user}</strong>, {new Date(review.createdAt).toLocaleDateString("en-US")}{" "}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </Popup>
             </Marker>
