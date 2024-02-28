@@ -15,33 +15,51 @@ function home() {
   };
 
   return (
-    <div className="w-full h-screen bg-[#1a1a1a] text-white flex items-center flex-col">
-      <div className="w-[70%] flex-row justify-around text-center mt-10">
+    <div className="w-full bg-[#1a1a1a] text-white flex items-center justify-center flex-col">
+
+      <div className="w-[70%] flex-row justify-around text-center mt-8">
         <h2 className="text-4xl m-5">Welcome to JournMEy</h2>
         <img src="./images/homemap.png" className="rounded-2xl flex" />
       </div>
 
+      <div className="h-auto m-5 text-center">
+      <p className="text-lg italic">
+        Trusted by millions of travellers, JournMEy is the best way to share
+      </p>
+      <h2>Rated {Array(5).fill('⭐')}</h2>
+    </div>
+
+      <div className="h-50% w-[70%] flex flex-row m-4">
+
+        <div className="mt-16 text-center">
+          <h2 className="text-3xl">Explore the world</h2>
+          <p className="text-lg">
+            Discover the best cities around the world as recommended by our
+            community of travellers.
+          </p>
+        </div>
+
       {/* container for list of cities and reviews */}
-      <div className="flex flex-col items-center w-[70%] mt-10 overflow-hidden">
+      <div className=" h-96 flex flex-col items-center w-full overflow-hidden">
         <div
-          className="flex flex-col items-end"
+          className="flex flex-col items-center w-full"
           style={{ animation: "scroll 50s linear infinite" }}
         >
           {cities.map((city, index) => (
             <div
               key={index}
-              className="border border-amber-500 rounded-2xl w-10/12 flex flex-row justify-around items-center mt-2"
+              className="border border-cyan-400 rounded-2xl w-11/12 flex flex-row justify-around items-center mt-2"
             >
               <div className="flex flex-row w-3/12">
                 <img
                   src={city.ProfilePic}
                   alt={city.Name}
-                  className="w-20 h-20  rounded-2xl border border-cyan-400"
+                  className="w-20 h-20  rounded-2xl border border-zinc-100"
                 />
-                <p className="flex items-end ">{city.Name}</p>
+                <p className="flex items-end ml-2">{city.Name}</p>
               </div>
 
-              <div className="w-8/12 flex flex-col justify-center items-center">
+              <div className="w-8/12 m-2 flex flex-col justify-center items-center">
                 <h3>{city.City}</h3>
                 <p>{city.Review}</p>
                 <p>Rating: {renderStars(city.Rating)}</p>
@@ -51,6 +69,9 @@ function home() {
         </div>
       </div>
     </div>
+
+  </div>
+
   );
 }
 

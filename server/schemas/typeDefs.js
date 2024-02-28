@@ -1,12 +1,14 @@
 const typeDefs = `
   type User {
-    _id: ID!
-    email: String!
-    username: String!
-    reviews: [Review!]!
+    _id: ID
+    email: String
+    username: String
+    reviews: [Review!]
+    token: ID
   }
 
   type Review {
+    _id: ID!
     user: String!
     review: String!
     rating: Int!
@@ -20,15 +22,14 @@ const typeDefs = `
   }
 
   type Query {
+    user: User
     getUser(id: ID!): User
     getAllUsers: [User]
   }
 
   type Mutation {
-    #add new user
-    addUser(email: String!, username: String!, xpassword: String!): Auth
     login(email: String!, password: String!): Auth
-
+    addUser(username: String!, email: String!, password: String!): Auth
     # add new review
     addReview(user: String!, review: String!, rating: Int!, createdAt: String!, cityName: String!): Review
   }
