@@ -14,6 +14,7 @@ const LeafletControlGeocoder = () => {
   const [formClicked, setFormClicked] = useState(false);
   const [rating, setRating] = useState(0); // State for rating
   const [createdAt, setCreatedAt] = useState(new Date().toISOString()); // Initialize with current date
+  const [searchPerformed, setSearchPerformed] = useState(false); // State to track search performed
 
   // Define your mutation
   const [addReview] = useMutation(ADD_REVIEW);
@@ -30,8 +31,12 @@ const LeafletControlGeocoder = () => {
       setSelectedCity(e.geocode.name);
       const latlng = e.geocode.center;
       map.setView(latlng, 13);
+      setSearchPerformed(true); // Set searchPerformed to true when geocode event is triggered
       if (formClicked) {
-        L.marker(latlng).addTo(map).bindPopup(e.geocode.name).openPopup();
+        L.marker(latlng)
+          .addTo(map)
+          .bindPopup(e.geocode.name)
+          .openPopup();
       }
     });
 
@@ -55,7 +60,8 @@ const LeafletControlGeocoder = () => {
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
-    if (selectedCity && review && rating && user) { // Ensure user data is available
+    if (selectedCity && review && rating && user) {
+      // Ensure user data is available
       try {
         // Execute the mutation using user's _id
         const { data } = await addReview({
@@ -70,14 +76,15 @@ const LeafletControlGeocoder = () => {
         console.log("Review added:", data.addReview); // Log the added review
         setReview("");
         setRating(0); // Reset rating after submission
-        setFormClicked(true);
+        setFormClicked(false);
+        setSearchPerformed(false);
       } catch (error) {
         console.error("Error submitting review:", error);
       }
     } else {
       console.log("Selected city, review, or rating is empty");
     }
-  };  
+  };
 
   // Function to render stars
   const renderStars = () => {
@@ -90,78 +97,82 @@ const LeafletControlGeocoder = () => {
           onClick={() => handleRatingChange(i)}
         >
           ★
-        </span>,
+        </span>
       );
     }
     return stars;
   };
 
   return (
-    <div className="popup" onClick={() => setFormClicked(true)}>
-      <div className="popup-inner" onClick={(e) => e.stopPropagation()}>
-        <form
-          onSubmit={handleSubmitReview}
-          style={{
-            backgroundColor: "green",
-            padding: "20px",
-            borderRadius: "10px",
-          }}
-        >
-          <button
-            type="button"
-            onClick={() => setFormClicked(false)} // Close the form when the button is clicked
+    searchPerformed && ( // Render form only if search has been performed
+      <div className="popup" onClick={() => setFormClicked(true)}>
+        <div className="popup-inner" onClick={(e) => e.stopPropagation()}>
+          <form
+            onSubmit={handleSubmitReview}
             style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              cursor: "pointer",
-              backgroundColor: "transparent",
-              border: "none",
-              color: "black",
+              backgroundColor: "green",
+              padding: "20px",
+              borderRadius: "10px",
             }}
           >
-            X
-          </button>
-          <label style={{ color: "black" }}>
-            {user && user._id},{" "}
-            {createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
-          </label>
-          <label style={{ color: "black" }}>
-            Review for {selectedCity}:
-            <textarea
-              value={review}
-              onChange={handleReviewChange}
+<button
+  type="button"
+  onClick={() => {
+    setFormClicked(false);
+    setSearchPerformed(false); // Optionally, reset searchPerformed state when closing the form
+  }}
+  style={{
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    border: "none",
+    color: "black",
+  }}
+>
+  X
+</button>
+            <label style={{ color: "black" }}>
+              {user && user._id},{createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
+            </label>
+            <label style={{ color: "black" }}>
+              Review for {selectedCity}:
+              <textarea
+                value={review}
+                onChange={handleReviewChange}
+                style={{
+                  width: "100%",
+                  minHeight: "100px",
+                  marginTop: "10px",
+                  padding: "5px",
+                }}
+              />
+            </label>
+            <label style={{ color: "black" }}>
+              Rating:
+              {renderStars()}
+            </label>{" "}
+            &nbsp;&nbsp;&nbsp;
+            <input type="hidden" value={createdAt} />
+            <button
+              type="submit"
               style={{
-                width: "100%",
-                minHeight: "100px",
+                backgroundColor: "white",
+                border: "none",
+                padding: "10px",
                 marginTop: "10px",
-                padding: "5px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                color: "black",
               }}
-            />
-          </label>
-          <label style={{ color: "black" }}>
-            Rating:
-            {renderStars()}
-          </label>{" "}
-          &nbsp;&nbsp;&nbsp;
-          <input type="hidden" value={createdAt} />
-          <button
-            type="submit"
-            style={{
-              backgroundColor: "white",
-              border: "none",
-              padding: "10px",
-              marginTop: "10px",
-              cursor: "pointer",
-              borderRadius: "5px",
-              color: "black",
-            }}
-          >
-            Submit Review
-          </button>
-        </form>
+            >
+              Submit Review
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
