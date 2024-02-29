@@ -1,58 +1,26 @@
-const { User, Review } = require('../models');
-const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth');
+const { User, Review } = require('../models'); // Adjust the path if necessary
+const { signToken, AuthenticationError } = require('../utils /auth'); // Adjust the path if necessary
 
 const resolvers = {
   Query: {
-    user: async (parent, args) => {
-      try {
-        const user = await User.findById(args.id).populate('reviews');
-        return user;
-      } catch (error) {
-        console.error('Error fetching user:', error);
-        throw new Error('Failed to fetch user');
-      }
+    user: async () => {
+        return await User.find({}).populate('reviews'); ;
     },
-    getAllUsers: async () => {
-      try {
-        const users = await User.find().populate('reviews');
-        return users;
-      } catch (error) {
-        console.error('Error fetching users:', error);
-        throw new Error('Failed to fetch users');
-      }
+    review: async () => {
+        return await Review.find({});
     },
   },
-
   Mutation: {
-    // add a user to the database
-    addUser: async (parent, args) => {
+    addUser: async (_, args) => {
       try {
         const user = await User.create(args);
-        const token = signToken(user);
-        return { token, user };
+        return user;
       } catch (error) {
         console.error('Error adding user:', error);
         throw new Error('Failed to add user');
       }
     },
-    addReview: async (parent, { user, review, rating, cityName, createdAt }) => {
-      try {
-        const newReview = await Review.create({ user, review, rating, cityName, createdAt });
-        
-        const updatedUser = await User.findByIdAndUpdate(
-          user, 
-          { $push: { reviews: newReview._id } }, 
-          { new: true }
-        );
-        
-        return newReview;
-      } catch (error) {
-        console.error('Error adding review:', error);
-        throw new Error('Failed to add review');
-      }
-    },
-    login: async (_, { email, password }) => {
+    loginUser: async (_, { email, password }) => {
       try {
         const user = await User.findOne({ email });
         if (!user || !user.isCorrectPassword(password)) {
@@ -63,6 +31,15 @@ const resolvers = {
       } catch (error) {
         console.error('Error during login:', error);
         throw new AuthenticationError('Failed to log in');
+      }
+    },
+    addReview: async (_, { review, rating, cityName, createdAt }) => {
+      try {
+        const newReview = await Review.create({ review, rating, cityName, createdAt });
+        return newReview;
+      } catch (error) {
+        console.error('Error adding review:', error);
+        throw new Error('Failed to add review');
       }
     }
   }

@@ -36,15 +36,15 @@ function Leafletmap() {
     }
   }, []);
 
-const addToFavorite = (marker) => {
-  const favoritesData = localStorage.getItem("favorites");
-  const favorites = favoritesData ? JSON.parse(favoritesData) : [];
-  const id = Date.now(); // Generate a unique ID based on current timestamp
-  const updatedFavorites = [...favorites, { id: id, ...marker }];
-  localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-  setFavorites(updatedFavorites);
-  console.log("Marker added to favorites:", marker);
-};
+  const addToFavorite = (marker) => {
+    const favoritesData = localStorage.getItem("favorites");
+    const favorites = favoritesData ? JSON.parse(favoritesData) : [];
+    const id = Date.now(); // Generate a unique ID based on current timestamp
+    const updatedFavorites = [...favorites, { id: id, ...marker }];
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    setFavorites(updatedFavorites);
+    console.log("Marker added to favorites:", marker);
+  };
 
   // grab reviews from seed
   const groupedReviews = reviewSeeds.reduce((acc, review) => {
@@ -78,7 +78,6 @@ const addToFavorite = (marker) => {
   //     console.log("Coordinates are undefined");
   //   }
   // };
-
 
   return (
     <div className="h-screen bg-[#1a1a1a] text-white flex items-center flex-col">
@@ -121,7 +120,8 @@ const addToFavorite = (marker) => {
                     <div key={index}>
                       <p>
                         {review.review} Rating: {review.rating} —{" "}
-                        <strong>{review.user}</strong>, {new Date(review.createdAt).toLocaleDateString("en-US")}{" "}
+                        <strong>{review.user}</strong>,{" "}
+                        {new Date(review.createdAt).toLocaleDateString("en-US")}{" "}
                       </p>
                     </div>
                   ))}
