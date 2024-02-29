@@ -1,5 +1,5 @@
 const { User, Review } = require('../models'); // Adjust the path if necessary
-const { signToken, AuthenticationError } = require('../utils /auth'); // Adjust the path if necessary
+const { signToken, AuthenticationError } = require('../utils/auth'); // Adjust the path if necessary
 
 const resolvers = {
   Query: {
@@ -20,7 +20,7 @@ const resolvers = {
         throw new Error('Failed to add user');
       }
     },
-    loginUser: async (_, { email, password }) => {
+    login: async (_, { email, password }) => {
       try {
         const user = await User.findOne({ email });
         if (!user || !user.isCorrectPassword(password)) {
