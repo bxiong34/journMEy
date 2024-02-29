@@ -15,7 +15,7 @@ function Account() {
   */
   
   const [userReviews, setUserReviews] = useState([]);
-const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     // Filter reviews for the current user
@@ -42,7 +42,7 @@ const [favorites, setFavorites] = useState([]);
   //     mapRef.current.flyTo(coordinates, 13, { animate: true });
   //     console.log("Locating coordinates on the map:", coordinates);
   //   } else {
-  //     console.log("Coordinates are undefined");
+  //     console.log("Coordinates are undefined, try again");
   //   }
   // };
 
