@@ -3,6 +3,7 @@ const typeDefs = `
     _id: ID!
     username: String!
     email: String!
+    password: String!
     reviews: [Review]!
   }
 
@@ -21,13 +22,13 @@ const typeDefs = `
   }
 
   type Query {
-    user: [User]!
+    user: User
     review: [Review]!
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): User!
-    login(email: String!, password: String!): Auth!
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
     addReview(review: String!, rating: Int!, cityName: String!, createdAt: String!): Review!
   }
 `;

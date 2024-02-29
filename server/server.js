@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const { authMiddleware } = require('../server/utils/auth')
 
 require('dotenv').config();
 
@@ -15,9 +16,6 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
-    return { user: req.user };
-  },
 });
 
 // apollo set up
@@ -31,7 +29,9 @@ const startApolloServer = async () => {
 app.use(cors());
   
   // middleware to handle graphql requests
-  app.use('/graphql', expressMiddleware(server));
+  app.use('/graphql', expressMiddleware(server, {
+    context: authMiddleware
+  }));
 
    // if in production, make client/dist files available for download or view in app
   if (process.env.NODE_ENV === 'production') {
