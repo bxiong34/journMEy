@@ -25,6 +25,7 @@ function Login() {
       console.log("Navigating to /account"); // Add logging
       navigate("/account"); // redirect to account page
     } catch (e) {
+      alert(e);
       console.error("Error during login:", e); // Add more detailed error message
     }
   };

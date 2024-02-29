@@ -22,6 +22,7 @@ function Account() {
   useEffect(() => {
     if (data) {
       setUser(data.user);
+      console.log(data);
     }
   }, [data]);
 

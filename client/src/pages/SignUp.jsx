@@ -26,6 +26,7 @@ function SignUp() {
       alert("Sign up successful!");
       navigate("/login"); // redirect to login page
     } catch (e) {
+      alert(e);
       console.error(e);
     }
   };

@@ -6,6 +6,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { ADD_REVIEW } from "../utils/mutations";
 import { QUERY_USER } from "../utils/queries";
 import "./LeafletControlGeocoder.css";
+import Auth from "../utils/auth";
 
 const LeafletControlGeocoder = () => {
   const map = useMap();
@@ -33,9 +34,22 @@ const LeafletControlGeocoder = () => {
       map.setView(latlng, 13);
       setSearchPerformed(true); // Set searchPerformed to true when geocode event is triggered
       if (formClicked) {
+        const popupContent = `
+        <div>
+        <h3>
+          <strong>${data.addReview.cityName}</strong>
+        </h3>
+          <div>
+            <p>
+              ${data.addReview.review} Rating: ${data.addReview.rating} —{" "}
+              <strong>${data.addReview.user}</strong>,{" "}
+              ${data.addReview.createdAt}{" "}
+            </p>
+          </div>
+        `;
         L.marker(latlng)
           .addTo(map)
-          .bindPopup(e.geocode.name)
+          .bindPopup(popupContent)
           .openPopup();
       }
     });
@@ -63,6 +77,12 @@ const LeafletControlGeocoder = () => {
     if (selectedCity && review && rating && user) {
       // Ensure user data is available
       try {
+        if (!Auth.loggedIn()) {
+          alert("Please log in to submit a review.");
+          // Optionally, you can redirect the user to the login page here
+          return;
+        }
+  
         // Execute the mutation using user's _id
         const { data } = await addReview({
           variables: {
@@ -84,7 +104,7 @@ const LeafletControlGeocoder = () => {
     } else {
       console.log("Selected city, review, or rating is empty");
     }
-  };
+  };  
 
   // Function to render stars
   const renderStars = () => {
