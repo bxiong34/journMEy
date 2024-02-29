@@ -47,10 +47,7 @@ const LeafletControlGeocoder = () => {
             </p>
           </div>
         `;
-        L.marker(latlng)
-          .addTo(map)
-          .bindPopup(popupContent)
-          .openPopup();
+        L.marker(latlng).addTo(map).bindPopup(popupContent).openPopup();
       }
     });
 
@@ -82,7 +79,7 @@ const LeafletControlGeocoder = () => {
           // Optionally, you can redirect the user to the login page here
           return;
         }
-  
+
         // Execute the mutation using user's _id
         const { data } = await addReview({
           variables: {
@@ -104,7 +101,7 @@ const LeafletControlGeocoder = () => {
     } else {
       console.log("Selected city, review, or rating is empty");
     }
-  };  
+  };
 
   // Function to render stars
   const renderStars = () => {
@@ -117,7 +114,7 @@ const LeafletControlGeocoder = () => {
           onClick={() => handleRatingChange(i)}
         >
           ★
-        </span>
+        </span>,
       );
     }
     return stars;
@@ -135,26 +132,27 @@ const LeafletControlGeocoder = () => {
               borderRadius: "10px",
             }}
           >
-<button
-  type="button"
-  onClick={() => {
-    setFormClicked(false);
-    setSearchPerformed(false); // Optionally, reset searchPerformed state when closing the form
-  }}
-  style={{
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    cursor: "pointer",
-    backgroundColor: "transparent",
-    border: "none",
-    color: "black",
-  }}
->
-  X
-</button>
+            <button
+              type="button"
+              onClick={() => {
+                setFormClicked(false);
+                setSearchPerformed(false); // Optionally, reset searchPerformed state when closing the form
+              }}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                cursor: "pointer",
+                backgroundColor: "transparent",
+                border: "none",
+                color: "black",
+              }}
+            >
+              X
+            </button>
             <label style={{ color: "black" }}>
-              {user && user._id},{createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
+              {user && user._id},
+              {createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
             </label>
             <label style={{ color: "black" }}>
               Review for {selectedCity}:
