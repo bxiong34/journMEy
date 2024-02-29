@@ -1,21 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
-// import { useQuery } from "@apollo/client";
-// import { QUERY_USER } from "../utils/queries";
-
 function Account() {
   const { loading, error, data } = useQuery(QUERY_USER);
+  const [user, setUser] = useState(null); // Initialize user state correctly
+
+  useEffect(() => {
+    if (data) {
+      setUser(data.user); // Assuming data has a user object
+      console.log(data.user); // Log the user data
+    }
+  }, [data]); // Depend on data to trigger this effect
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching user information: {error.message}</p>;
 
-  // Once data is loaded, access the user object and extract the username
-  const { user } = data;
-  console.log(user);
-
   return (
+    /*
     <div className="w-full h-screen bg-[#1a1a1a] text-white flex-row text-center">
       <h2 className="text-4xl">Hello, {user.username}!</h2>
       <p>View Favorites:</p>
@@ -33,6 +35,7 @@ function Account() {
   );
 }
 export default Account;
+*/
 /*
   const { loading, error, data } = useQuery(QUERY_USER);
 
@@ -121,7 +124,7 @@ export default Account;
   //     </ul>
   //   </div>
     
-    /*
+    
     <>
       {user ? (
     <>
@@ -135,8 +138,8 @@ export default Account;
   ) : <div>Loading...</div> }
 
     </>
-    */
-//   );
-// }
+    
+  );
+}
 
-// export default Account;
+export default Account;

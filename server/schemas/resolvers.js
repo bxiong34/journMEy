@@ -3,35 +3,36 @@ const { signToken, AuthenticationError } = require('../utils/auth'); // Adjust t
 
 const resolvers = {
   Query: {
-    user: async () => {
-        return await User.find({}).populate('reviews'); ;
+    user: async (parent, args, context) => {
+        return await User.findById(context.user._id).populate('reviews'); ;
     },
     review: async () => {
         return await Review.find({});
     },
   },
   Mutation: {
-    addUser: async (_, args) => {
-      try {
-        const user = await User.create(args);
-        return user;
-      } catch (error) {
-        console.error('Error adding user:', error);
-        throw new Error('Failed to add user');
-      }
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
     },
-    login: async (_, { email, password }) => {
-      try {
-        const user = await User.findOne({ email });
-        if (!user || !user.isCorrectPassword(password)) {
-          throw new AuthenticationError('Invalid email or password');
-        }
-        const token = signToken(user);
-        return { token, user };
-      } catch (error) {
-        console.error('Error during login:', error);
-        throw new AuthenticationError('Failed to log in');
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw AuthenticationError;
       }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
     },
     addReview: async (_, { review, rating, cityName, createdAt }) => {
       try {
