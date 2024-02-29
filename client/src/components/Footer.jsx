@@ -6,9 +6,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t w-full flex flex-row justify-between bg-[#1a1a1a]/90 text-zinc-100 p-3 text-center">
+    <footer className="border-t w-full flex flex-row justify-between bg-[#1a1a1a]/90 text-zinc-100 p-3 text-center fixed bottom-0 left-0 right-0">
       <div></div>
-      <div>
+      <div style={{ marginLeft: "55px" }}>
         <a
           href="https://github.com/bxiong34/journMEy"
           target="_blank"

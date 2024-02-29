@@ -1,5 +1,6 @@
 import React from "react";
 import cities from "../components/cities";
+import "../App.css";
 
 function home() {
   const renderStars = (rating) => {
@@ -15,11 +16,15 @@ function home() {
   };
 
   return (
-    <div className="w-full bg-[#1a1a1a] text-white flex items-center justify-center flex-col">
-      <div className="w-[70%] flex-row justify-around text-center mt-8">
+    <div className="w-full bg-[#1a1a1a] text-white flex items-center justify-center flex-col pb-10">
+      <div className="w-[70%] flex-row justify-around text-center">
         <h2 className="text-4xl m-5">Welcome to JournMEy</h2>
-        <img src="./images/homemap.png" className="rounded-2xl flex" />
       </div>
+      <img
+        src="./images/homemap.png"
+        className="rounded-2xl"
+        style={{ width: "500px", height: "auto" }}
+      />
 
       <div className="h-auto m-5 text-center">
         <p className="text-lg italic">

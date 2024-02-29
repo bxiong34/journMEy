@@ -79,6 +79,7 @@ function Leafletmap() {
         minZoom={2}
         maxZoom={18}
         worldCopyJump={true}
+        className="h-screen w-screen mb-20 md:mb-20 lg:mb-40 xl:mb-40"
       >
         <TileLayer
           attribution='<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -130,7 +131,7 @@ function Leafletmap() {
       </MapContainer>
 
       <div
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
         style={{ zIndex: 1000 }}
       >
         <button

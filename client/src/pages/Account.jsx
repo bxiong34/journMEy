@@ -17,6 +17,7 @@ function Account() {
   const { loading, error, data } = useQuery(QUERY_USER);
   const [user, setUser] = useState(null);
   const [favorites, setFavorites] = useState([]); // State variable for favorites list
+  const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -30,7 +31,7 @@ function Account() {
   return (
     <>
       {user ? (
-        <div className="w-full h-screen bg-[#1a1a1a] text-white flex-row text-center">
+        <div className="min-h-screen bg-[#1a1a1a] text-white flex flex-col justify-center items-center pb-20">
           <h2 className="text-4xl">Hello {user.username}!</h2>
           <p className="mt-4">Here are your favorites:</p>
 
@@ -44,16 +45,41 @@ function Account() {
             ))}
           </ul>
 
-          <p className="mt-4">Here are your reviews:</p>
+          <p className="mt-4">
+            Here are your{" "}
+            <span
+              onClick={() => setShowReviews(!showReviews)}
+              style={{
+                cursor: "pointer",
+                color: "yellow",
+                fontWeight: "bold",
+                fontStyle: "italic",
+              }}
+            >
+              reviews
+            </span>
+            :
+          </p>
           {/* Render user reviews */}
-          {user.reviews.map((review, index) => (
-            <div key={index}>
-              <p>{review.cityName}</p>
-              <p>{review.review}</p>
-              <p>{renderStars(review.rating)}</p>
-              <p>{review.createdAt}</p>
+          {showReviews && (
+            <div className="bg-white shadow-md rounded-md p-1 mt-4 mx-20">
+              {user.reviews.map((review, index) => (
+                <div key={index} className="border-b-2 border-gray-200 pb-2">
+                  <p className="text-gray-600 text-lg font-semibold">
+                    {review.cityName}
+                  </p>
+                  <p className="text-gray-600">{review.review}</p>
+                  <div className="flex items-center">
+                    <p className="text-yellow-500">
+                      {renderStars(review.rating)}
+                    </p>
+                    <p className="text-gray-400 ml-2">Rating</p>
+                  </div>
+                  <p className="text-gray-400 mt-2">{review.createdAt}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       ) : (
         <div>Loading...</div>
