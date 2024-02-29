@@ -16,11 +16,7 @@ const LeafletControlGeocoder = () => {
   const [createdAt, setCreatedAt] = useState(new Date().toISOString()); // Initialize with current date
 
   // Define your mutation
-  const [submitReview] = useMutation(ADD_REVIEW);
-
-  const closeForm = () => {
-    setFormClicked(false);
-  };
+  const [addReview] = useMutation(ADD_REVIEW);
 
   useEffect(() => {
     let geocoder = L.Control.geocoder({
@@ -57,19 +53,21 @@ const LeafletControlGeocoder = () => {
     setRating(value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmitReview = async (e) => {
     e.preventDefault();
-    if (selectedCity && review && rating) {
+    if (selectedCity && review && rating && user) { // Ensure user data is available
       try {
-        // Execute the mutation
-        await submitReview({
+        // Execute the mutation using user's _id
+        const { data } = await addReview({
           variables: {
+            user: user._id, // Pass user's _id instead of username
             cityName: selectedCity,
             review: review,
             rating: rating,
             createdAt: createdAt,
           },
         });
+        console.log("Review added:", data.addReview); // Log the added review
         setReview("");
         setRating(0); // Reset rating after submission
         setFormClicked(true);
@@ -79,7 +77,7 @@ const LeafletControlGeocoder = () => {
     } else {
       console.log("Selected city, review, or rating is empty");
     }
-  };
+  };  
 
   // Function to render stars
   const renderStars = () => {
@@ -102,7 +100,7 @@ const LeafletControlGeocoder = () => {
     <div className="popup" onClick={() => setFormClicked(true)}>
       <div className="popup-inner" onClick={(e) => e.stopPropagation()}>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmitReview}
           style={{
             backgroundColor: "green",
             padding: "20px",
@@ -111,7 +109,7 @@ const LeafletControlGeocoder = () => {
         >
           <button
             type="button"
-            onClick={closeForm}
+            onClick={() => setFormClicked(false)} // Close the form when the button is clicked
             style={{
               position: "absolute",
               top: "10px",
@@ -125,7 +123,7 @@ const LeafletControlGeocoder = () => {
             X
           </button>
           <label style={{ color: "black" }}>
-            {user && user.username},{" "}
+            {user && user._id},{" "}
             {createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
           </label>
           <label style={{ color: "black" }}>
@@ -151,7 +149,6 @@ const LeafletControlGeocoder = () => {
             type="submit"
             style={{
               backgroundColor: "white",
-              color: "green",
               border: "none",
               padding: "10px",
               marginTop: "10px",

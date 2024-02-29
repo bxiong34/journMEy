@@ -9,6 +9,9 @@ const resolvers = {
     review: async () => {
         return await Review.find({});
     },
+    allUsers: async () => {
+      return await User.find({});
+  },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -34,9 +37,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addReview: async (_, { review, rating, cityName, createdAt }) => {
+    addReview: async (_, { user, review, rating, cityName, createdAt }) => {
       try {
-        const newReview = await Review.create({ review, rating, cityName, createdAt });
+        // Create the review document with the provided user ID
+        const newReview = await Review.create({ user, review, rating, cityName, createdAt });
+        
         return newReview;
       } catch (error) {
         console.error('Error adding review:', error);
