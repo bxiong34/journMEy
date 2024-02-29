@@ -71,12 +71,12 @@ function Account() {
                   </p>
                   <p className="text-gray-600">{review.review}</p>
                   <div className="flex items-center">
+                    <p className="text-gray-400">Rating:</p>
                     <p className="text-yellow-500">
                       {renderStars(review.rating)}
                     </p>
-                    <p className="text-gray-400 ml-2">Rating</p>
+                    <p className="text-gray-400 ml-2">{review.createdAt}</p>
                   </div>
-                  <p className="text-gray-400 mt-2">{review.createdAt}</p>
                 </div>
               ))}
             </div>

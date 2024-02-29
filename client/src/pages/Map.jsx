@@ -80,11 +80,11 @@ function Leafletmap() {
           key={i}
           style={{
             color: i <= rating ? "gold" : "gray",
-            cursor: "default"
+            cursor: "default",
           }}
         >
           ★
-        </span>
+        </span>,
       );
     }
     return <span>{stars}</span>;
@@ -131,7 +131,8 @@ function Leafletmap() {
                   {reviews.map((review, index) => (
                     <div key={index}>
                       <p>
-                      {review.review} Rating: <StarRating rating={review.rating} /> —
+                        {review.review} Rating:{" "}
+                        <StarRating rating={review.rating} /> —
                         <strong>{review.user}</strong>,
                         {new Date(review.createdAt).toLocaleDateString("en-US")}
                       </p>
