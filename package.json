@@ -20,6 +20,7 @@
   "dependencies": {
     "leaflet": "^1.9.4",
     "leaflet-control-geocoder": "^2.4.0",
+    "mongodb": "^6.3.0",
     "prettier": "^3.2.5"
   }
 }

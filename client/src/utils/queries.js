@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
   {
-    me {
+    user {
       username
       email
       reviews {
@@ -12,4 +12,5 @@ export const QUERY_USER = gql`
         createdAt
       }
     }
-  }`;
+  }
+`;

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 require('dotenv').config();
 
@@ -14,6 +15,9 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: ({ req }) => {
+    return { user: req.user };
+  },
 });
 
 // apollo set up
@@ -22,6 +26,9 @@ const startApolloServer = async () => {
   
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
+
+    // Enable All CORS Requests
+app.use(cors());
   
   // middleware to handle graphql requests
   app.use('/graphql', expressMiddleware(server));

@@ -1,9 +1,10 @@
 const { User, Review } = require('../models');
-const { signToken, AuthenticationError } = require('../utils /auth');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    getUser: async (parent, args) => {
+    user: async (parent, args) => {
       try {
         const user = await User.findById(args.id).populate('reviews');
         return user;
@@ -22,7 +23,9 @@ const resolvers = {
       }
     },
   },
+
   Mutation: {
+    // add a user to the database
     addUser: async (parent, args) => {
       try {
         const user = await User.create(args);

@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { reviewSeeds } from "../../../server/seeders/reviewSeeds.json";
 
+// import { useQuery } from "@apollo/client";
+// import { QUERY_USER } from "../utils/queries";
+
 function Account() {
+  /*
+  const { loading, error, data } = useQuery(QUERY_USER);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  const user = data.user;
+  */
+  
   const [userReviews, setUserReviews] = useState([]);
-const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     // Filter reviews for the current user
@@ -30,7 +42,7 @@ const [favorites, setFavorites] = useState([]);
   //     mapRef.current.flyTo(coordinates, 13, { animate: true });
   //     console.log("Locating coordinates on the map:", coordinates);
   //   } else {
-  //     console.log("Coordinates are undefined");
+  //     console.log("Coordinates are undefined, try again");
   //   }
   // };
 
@@ -62,6 +74,7 @@ const [favorites, setFavorites] = useState([]);
 // }
 
   return (
+  
     <div className="w-full h-screen bg-[#1a1a1a] text-white flex-row text-center">
       <h2 className="text-4xl">Hello User!</h2>
       <p>View Favorites?</p>
@@ -79,6 +92,22 @@ const [favorites, setFavorites] = useState([]);
         ))}
       </ul>
     </div>
+    
+    /*
+    <>
+      {user ? (
+    <>
+    <div className="w-full h-screen bg-[#1a1a1a] text-white flex-row text-center">
+      <h2 className="text-4xl">Hello {user.username}!</h2>
+      <p>Add a Review?</p>
+      <p>View Favorites?</p>
+      <p>View Past Reviews?</p>
+    </div>
+    </>
+  ) : <div>Loading...</div> }
+
+    </>
+    */
   );
 }
 

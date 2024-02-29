@@ -6,14 +6,17 @@ class Auth {
   }
 
   loggedIn() {
-    const token = this.getToken();  // Checks if there is a saved token and if it's still valid
-    return !!token && !this.isTokenExpired(token); // !!token: This checks if a token exists. !this.isTokenExpired(token): This checks if the token is not expired 
+    // Checks if there is a saved token and it's still valid
+    const token = this.getToken();
+    return !!token && !this.isTokenExpired(token);
   }
 
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
-      decoded.exp < Date.now() / 1000 ? true : false; // This checks if the token is expired
+      if (decoded.exp < Date.now() / 1000) {
+        return true;
+      } else return false;
     } catch (err) {
       return false;
     }
@@ -28,14 +31,13 @@ class Auth {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 
-    // This will redirects the user to the homepage
-    window.location.assign('/'); 
+    window.location.assign('/');
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
-    // This will reload the page and reset the state of the application
+    // this will reload the page and reset the state of the application
     window.location.assign('/');
   }
 }
