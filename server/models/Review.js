@@ -2,12 +2,9 @@ const { Schema, model } = require('mongoose');
 
 const reviewSchema = new Schema({
   user: {
-    type: String, // Assuming username is a string
-    ref: 'User', // Reference the User model
-    required: true,
-    // Explicitly specify the field to use for referencing
-    // This references the 'username' field of the User model
-    match: /^[a-zA-Z0-9._-]+$/, // Add appropriate regex pattern for usernames
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
   review: {
     type: String,
