@@ -1,5 +1,5 @@
-const { User, Review } = require('../models'); // Adjust the path if necessary
-const { signToken, AuthenticationError } = require('../utils/auth'); // Adjust the path if necessary
+const { User, Review } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
   Query: {
