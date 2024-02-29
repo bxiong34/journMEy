@@ -33,7 +33,7 @@ function Account() {
       {user ? (
         <div className="min-h-screen bg-[#1a1a1a] text-white flex flex-col justify-center items-center pb-20">
           <h2 className="text-4xl">Hello {user.username}!</h2>
-          <p className="mt-4">Here are your favorites:</p>
+          <p className="mt-4">Explore your favorites:</p>
 
           {/* Render favorites list */}
           <ul>
