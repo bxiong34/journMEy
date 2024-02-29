@@ -1,152 +1,84 @@
-# Project 3: Interactive MERN SPA Project
-Projects have played a key role in your journey to becoming a full-stack web developer. As you apply for development jobs, your portfolio is absolutely vital to opening doors to opportunities. Your portfolio showcases high-quality deployed examples of your work, and you can use your finished projects for that very purpose.
+# Project 3: JournMEy
 
-This project is a fantastic opportunity to show employers your collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. Remember that employers want to know what you can do, but they also want to know how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+## Description 
+JournMEy is an app designed for adventurous travelers seeking unique journeys and insightful recommendations. With JournMEy, travelers can discover city reviews contributed by fellow adventurers from around the globe. Whether you're a seasoned traveler or embarking on your first journey, JournMEy can assist you in planning your next adventure.
 
-# Project Requirements
-With your group, you’ll again conceive and execute a design that solves a real-world problem. In creating your first collaborative MERN-stack single-page application, you’ll combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform. You’ll continue to build on the agile development methodologies you’ve used throughout this course. These include storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
+## Table of Contents
 
-For this project, you should start from scratch. Doing so will allow you to revisit your front-end abilities in the context of React and solidify your understanding of working with multiple servers in a MERN application. Your skills have continued to improve since the first two projects, so naturally your approach will be different considering the experience you’ve gained with each new application you’ve built.
+- [Overview](#overview)
+- [Target Audience](#target-audience)
+- [How to Use](#how-to-use)
+- [Benefits](#benefits)
+- [Tech Stack](#tech-stack)
+- [Contributors](#contributors)
+- [Contact](#contact)
 
-Your group will use everything you’ve learned throughout this course to create a MERN-stack single-page application that works with real-world data to solve a real-world challenge, with a focus on data and user demand. This project will provide you with the best opportunity to demonstrate your problem-solving skills, which employers will want to observe. Once again, the user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
+## Overview
 
-Use React for the front end.
+Similar to how individuals rely on reviews to make informed decisions about dining, we envisioned an app that could help travelers find reviews about cities, helping them decide on their next journey destination. Through the app, users can access city reviews from around the world, favorite cities they wish to visit, revisit their own previous reviews, and contribute new reviews for the benefit of others.
 
-Use GraphQL with a Node.js and Express.js server.
+## Target Audience
 
-Use MongoDB and the Mongoose ODM for the database.
+The journMEy app aims to provide personalized travel experiences for a wide range of travelers, including:
+1. Travel Enthusiasts: Those who love exploring new places.
+2. Backpackers: Budget travelers seeking adventurous experiences.
+3. Solo Travelers: Individuals who enjoy independent travel.
+4. Family Travelers: Families looking for kid-friendly destinations.
+5. Adventure Seekers: Thrill-seekers seeking exciting experiences.
+6. Cultural Explorers: People interested in diverse cultures and cuisines.
+7. Business Travelers: Professionals traveling for work purposes.
+8. Photography Enthusiasts: Photographers capturing travel moments.
 
-Use queries and mutations for retrieving, adding, updating, and deleting data.
+## How to Use
 
-Be deployed using Render (with data).
+### 1. Login or Sign Up
 
-Have a polished UI.
+Access the app using your credentials to: LINKLINKLINK
+![Alt text](client/public/images/login.png)
+![Alt text](client/public/images/signup.png)
 
-Be responsive.
+### 2. Map
 
-Be interactive (i.e., accept and respond to user input).
+Read reviews about different cities by viewing the world map. There is also a search bar for users to find a particular city.
+![Alt text](client/public/images/map.png)
 
-Include authentication (JWT).
+### 3. Add Reviews
 
-Protect sensitive API key information on the server.
+Contribute by adding reviews about the cities you have visited, allowing other travelers to learn about what each city has to offer.
+![Alt text](client/public/images/addreview.png)
 
-Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, and so on).
+### 4. Explore Favorites
 
-Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+Discover the cities you've marked for your next journey.
 
-# CSS Styling
-Instead of using a CSS library like Bootstrap, consider one of the following suggestions:
+### 5. Review your Visits
 
-Explore the concept of CSS-in-JS, which abstracts CSS to the component level, using JavaScript to describe styles in a declarative and maintainable way. Some popular libraries include styled-componentsLinks to an external site. and EmotionLinks to an external site..
+View the cities you've explored and shared your experiences about.
+![Alt text](client/public/images/yourreviews.png)
 
-Try using a component library, such as Semantic UILinks to an external site., Chakra UILinks to an external site., or Ant DesignLinks to an external site..
+### 6. Logout
 
-Create all the CSS for your application just using CSS.
+Securely sign out from your session when you're done.
+![Alt text](client/public/images/logout.png)
 
-Ultimately, it doesn't matter which of these options you choose—it just needs to look professional and be mobile-friendly.
+## Tech Stack
 
-# Payment Platform
-Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, you could set up your site to accept charitable donations.
+- MongoDB
+- Mongoose ODM
+- Express.js
+- React.js
+- Node.js
+- GraphQL API
+- JWT Authentication 
+- React Leaflet
+- Tailwind CSS
 
-# Bonus
-Although this is not a requirement for your project, try to also implement functionality to meet the minimum requirements of a PWA:
+## Contributors
 
-Uses a web manifest.
+Special thanks to the contributors who have helped in building and improving the Expense Insight Tracker:
 
-Uses a service worker for offline functionality.
+- [Keng Thao](https://github.com/Kthao29)
+- [Willie Jones](https://github.com/Liiv-Dev)
+- [Bao Xiong](https://github.com/bxiong34)
 
-Is installable.
-
-# Presentation Requirements
-Use this project presentation templateLinks to an external site. to address the following:
-
-Elevator pitch: A one-minute description of your application.
-
-Concept: What is your user story? What was your motivation for development?
-
-Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-Demo: Show your stuff!
-
-Directions for future development.
-
-Links to the deployed application and the GitHub repository. Use the Deploy MERN Stack with Render and MongoDB AtlasLinks to an external site. if you need a reminder on how to deploy to Render.
-
-# Grading Requirements
-This project is graded based on the following criteria:
-
-NOTE
-If a project submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
-
-A repository that has no code
-
-A repository that includes a unique name but nothing else
-
-A repository that includes only a README file but nothing else
-
-A repository that only includes starter code
-
-# Technical Acceptance Criteria: 25%
-Satisfies the following code requirements:
-
-Application uses React for the front end.
-
-Application has a GraphQL API with a Node.js and Express.js server, and uses queries and mutations for retrieving, adding, updating, and deleting data.
-
-Application uses MongoDB and the Mongoose ODM for the database and protects sensitive API key information on the server.
-
-Application includes user authentication using JWT.
-
-# Concept: 10%
-Application should be a unique and novel idea.
-
-Your group should clearly and concisely articulate your project idea.
-
-# Deployment: 20%
-Application deployed at live URL on Render and loads with no errors.
-
-Application GitHub URL submitted.
-
-# Repository Quality: 10%
-Repository has a unique name.
-
-Repository follows best practices for file structure and naming conventions.
-
-Repository follows best practices for class and id naming conventions, indentation, quality comments, etc.
-
-Repository contains multiple descriptive commit messages.
-
-Repository contains a high-quality README file with description, screenshot, and link to deployed application.
-
-# Application Quality: 15%
-Application user experience is intuitive and easy to navigate.
-
-Application user interface style is clean and polished.
-
-Application is responsive.
-
-# Presentation: 10%
-Your group should present using Google Slides, Powerpoint, or a similar presentation software.
-
-Every group member should speak during the presentation.
-
-Your presentation should follow the Project Presentation TemplateLinks to an external site..
-
-# Collaboration: 10%
-There are no major disparities in the number of GitHub contributions between group members.
-Bonus
-Fulfilling all three of the following requirements to turn your app into a PWA will add 10 points to your grade. Note that the highest grade you can achieve is still a 100:
-
-Uses a web manifest.
-
-Uses a service worker for offline functionality.
-
-Is installable.
-
-# How to Submit Your MERN-Stack Single-Page Application
-Each member of your group is required to submit the following for review:
-
-The URL of the deployed application.
-
-The URL of the GitHub repository, with a unique name and a README describing the project.
-
+If you have any questions or need assistance, please contact the contributors through GitHub.
