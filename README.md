@@ -8,10 +8,8 @@ JournMEy is an app designed for adventurous travelers seeking unique journeys an
 - [Overview](#overview)
 - [Target Audience](#target-audience)
 - [How to Use](#how-to-use)
-- [Benefits](#benefits)
 - [Tech Stack](#tech-stack)
 - [Contributors](#contributors)
-- [Contact](#contact)
 
 ## Overview
 
@@ -33,7 +31,7 @@ The journMEy app aims to provide personalized travel experiences for a wide rang
 
 ### 1. Login or Sign Up
 
-Access the app using your credentials to: LINKLINKLINK
+Access the app using your credentials to: https://journmey.onrender.com
 ![Alt text](client/public/images/login.png)
 ![Alt text](client/public/images/signup.png)
 
@@ -50,6 +48,7 @@ Contribute by adding reviews about the cities you have visited, allowing other t
 ### 4. Explore Favorites
 
 Discover the cities you've marked for your next journey.
+![Alt text](client/public/images/yourfavorites.png)
 
 ### 5. Review your Visits
 
@@ -75,7 +74,7 @@ Securely sign out from your session when you're done.
 
 ## Contributors
 
-Special thanks to the contributors who have helped in building and improving the Expense Insight Tracker:
+Special thanks to the contributors who have helped in building and improving JournMEy:
 
 - [Keng Thao](https://github.com/Kthao29)
 - [Willie Jones](https://github.com/Liiv-Dev)
