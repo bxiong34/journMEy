@@ -133,7 +133,7 @@ function Leafletmap() {
                       <p>
                         {review.review} Rating:{" "}
                         <StarRating rating={review.rating} /> —
-                        <strong>{review.user}</strong>,
+                        <strong>{review.user}</strong>, &nbsp;
                         {new Date(review.createdAt).toLocaleDateString("en-US")}
                       </p>
                       <button

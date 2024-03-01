@@ -1,6 +1,7 @@
 import React from "react";
 import cities from "../components/cities";
 import "../App.css";
+import Logo from "/images/JournMEy.png";
 
 function home() {
   const renderStars = (rating) => {
@@ -16,10 +17,19 @@ function home() {
   };
 
   return (
-    <div className="w-full bg-[#1a1a1a] text-white flex items-center justify-center flex-col pb-10">
-      <div className="w-[70%] flex-row justify-around text-center">
-        <h2 className="text-4xl m-5">Welcome to JournMEy</h2>
+    <div className="w-full bg-[#1a1a1a] text-white flex items-center justify-center flex-col">
+      <div className="w-[70%] mx-auto flex flex-row justify-around text-center">
+        <h2 className="text-5xl m-4 flex items-center">
+          <img
+            src={Logo}
+            alt="JournMEy Logo"
+            className="text-center mr-4"
+            style={{ width: "70px", height: "70px" }}
+          />
+          Welcome to JournMEy
+        </h2>
       </div>
+
       <img
         src="./images/homemap.png"
         className="rounded-2xl"
