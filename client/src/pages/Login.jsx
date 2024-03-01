@@ -32,7 +32,7 @@ function Login() {
 
   return (
     <div className="w-full h-screen flex">
-      <div className="w-full bg-[#1a1a1a] flex justify-center items-center">
+      <div className="w-full bg-[#1a1a1a] flex justify-center items-center pb-20">
         <form
           className="text-center border rounded-lg w-[600px] h-[400px] p-9"
           onSubmit={handleLogin}

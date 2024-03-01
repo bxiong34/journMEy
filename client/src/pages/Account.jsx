@@ -71,7 +71,7 @@ function Account() {
                   </p>
                   <p className="text-gray-600">{review.review}</p>
                   <div className="flex items-center">
-                    <p className="text-gray-400">Rating:</p>
+                    <p className="text-gray-400">Rating:</p>&nbsp;
                     <p className="text-yellow-500">
                       {renderStars(review.rating)}
                     </p>
