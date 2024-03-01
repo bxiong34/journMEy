@@ -30,7 +30,8 @@
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.2",
-    "node.js": "^0.0.1-security"
+    "node.js": "^0.0.1-security",
+    "whatwg-url": "^14.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
