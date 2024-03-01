@@ -37,21 +37,43 @@ const LeafletControlGeocoder = () => {
         const popupContent = `
         <div>
         <h3>
-          <strong>${data.addReview.cityName}</strong>
+          <strong>${selectedCity}</strong>
         </h3>
-          <div>
-            <p>
-              ${data.addReview.review} Rating: ${data.addReview.rating} —{" "}
-              <strong>${data.addReview.user}</strong>,{" "}
-              ${data.addReview.createdAt}{" "}
-            </p>
-          </div>
+        <div>
+          <p>
+            ${review} Rating: ${rating} — 
+            <strong>${user?.username}</strong>, 
+            ${new Date(createdAt).toLocaleDateString()} 
+          </p>
+        </div>
+      </div>
         `;
         L.marker(latlng).addTo(map).bindPopup(popupContent).openPopup();
       }
     });
 
     geocoder.addTo(map);
+
+    // Retrieve reviews from local storage
+    const storedReviews = Object.keys(localStorage).filter(key => key.startsWith("review_"));
+    storedReviews.forEach(key => {
+      const review = JSON.parse(localStorage.getItem(key));
+      const marker = L.marker([review.geocode.lat, review.geocode.lng]).addTo(map);
+      const popupContent = `
+      <div>
+        <h3>
+          <strong>${review.cityName}</strong>
+        </h3>
+        <div>
+          <p>
+            ${review.review} Rating: ${review.rating} — 
+            <strong>${review.user}</strong>, 
+            ${new Date(review.createdAt).toLocaleDateString()} 
+          </p>
+        </div>
+      `;
+      marker.bindPopup(popupContent);
+    });
 
     return () => {
       geocoder.off("markgeocode");
@@ -90,7 +112,23 @@ const LeafletControlGeocoder = () => {
             createdAt: createdAt,
           },
         });
-        console.log("Review added:", data.addReview); // Log the added review
+
+        // Generate a unique key for the review
+        const reviewKey = `review_${Date.now()}`;
+
+        // Save the review to local storage under the generated key
+        localStorage.setItem(reviewKey, JSON.stringify({
+          user: user._id,
+          cityName: selectedCity,
+          review: review,
+          rating: rating,
+          createdAt: createdAt,
+          geocode: map.getCenter(), // Assuming you want to save the coordinates of the map center
+        }));
+
+        // Log the added review
+        console.log("Review added:", data.addReview);
+
         setReview("");
         setRating(0); // Reset rating after submission
         setFormClicked(false);
@@ -151,10 +189,6 @@ const LeafletControlGeocoder = () => {
               X
             </button>
             <label style={{ color: "black" }}>
-              {user && user._id},
-              {createdAt && new Date(createdAt).toLocaleDateString()}, &nbsp;
-            </label>
-            <label style={{ color: "black" }}>
               Review for {selectedCity}:
               <textarea
                 value={review}
@@ -195,3 +229,4 @@ const LeafletControlGeocoder = () => {
 };
 
 export default LeafletControlGeocoder;
+
