@@ -6,7 +6,7 @@ const renderStars = (rating) => {
   let stars = [];
   for (let i = 0; i < 5; i++) {
     stars.push(
-      i < rating ? <span key={i}>&#9733;</span> : <span key={i}>&#9734;</span>
+      i < rating ? <span key={i}>&#9733;</span> : <span key={i}>&#9734;</span>,
     );
   }
   return stars;
@@ -58,9 +58,7 @@ function Account() {
             <p className="text-gray-600">{review.review}</p>
             <div className="flex items-center text-center">
               <p className="text-gray-400">Rating:</p>
-              <p className="text-yellow-500">
-                {renderStars(review.rating)}
-              </p>
+              <p className="text-yellow-500">{renderStars(review.rating)}</p>
               <p className="text-gray-400 ml-2">{review.createdAt}</p>
             </div>
           </div>
@@ -80,9 +78,7 @@ function Account() {
             <p className="text-gray-600">{favorite.review}</p>
             <div className="flex items-center">
               <p className="text-gray-400">Rating:</p>
-              <p className="text-yellow-500">
-                {renderStars(favorite.rating)}
-              </p>
+              <p className="text-yellow-500">{renderStars(favorite.rating)}</p>
               <p className="text-gray-400 ml-2">{favorite.createdAt}</p>
               <button
                 className="text-red-700 ml-2"

@@ -6,12 +6,12 @@ function Navbar() {
   if (Auth.loggedIn()) {
     return (
       <nav className="flex justify-end space-around p-3 border-b border-zinc-800 bg-[#1a1a1a]/90 text-zinc-100 items-right-end">
-        <img
+        <ul className="flex items-center space-x-10">
+          <img
             src={Logo}
             alt="JournMEy Logo"
             style={{ width: "45px", height: "45px" }}
           />
-        <ul className="flex items-center space-x-10">
           <li>
             <Link to="/" className="hover:underline">
               Home

@@ -55,10 +55,14 @@ const LeafletControlGeocoder = () => {
     geocoder.addTo(map);
 
     // Retrieve reviews from local storage
-    const storedReviews = Object.keys(localStorage).filter(key => key.startsWith("review_"));
-    storedReviews.forEach(key => {
+    const storedReviews = Object.keys(localStorage).filter((key) =>
+      key.startsWith("review_"),
+    );
+    storedReviews.forEach((key) => {
       const review = JSON.parse(localStorage.getItem(key));
-      const marker = L.marker([review.geocode.lat, review.geocode.lng]).addTo(map);
+      const marker = L.marker([review.geocode.lat, review.geocode.lng]).addTo(
+        map,
+      );
       const popupContent = `
       <div>
         <h3>
@@ -117,14 +121,17 @@ const LeafletControlGeocoder = () => {
         const reviewKey = `review_${Date.now()}`;
 
         // Save the review to local storage under the generated key
-        localStorage.setItem(reviewKey, JSON.stringify({
-          user: user._id,
-          cityName: selectedCity,
-          review: review,
-          rating: rating,
-          createdAt: createdAt,
-          geocode: map.getCenter(), // Assuming you want to save the coordinates of the map center
-        }));
+        localStorage.setItem(
+          reviewKey,
+          JSON.stringify({
+            user: user._id,
+            cityName: selectedCity,
+            review: review,
+            rating: rating,
+            createdAt: createdAt,
+            geocode: map.getCenter(), // Assuming you want to save the coordinates of the map center
+          }),
+        );
 
         // Log the added review
         console.log("Review added:", data.addReview);
@@ -229,4 +236,3 @@ const LeafletControlGeocoder = () => {
 };
 
 export default LeafletControlGeocoder;
-
