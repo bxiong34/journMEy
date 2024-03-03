@@ -10,7 +10,7 @@ const resolvers = {
         return await Review.find({});
     },
     allUsers: async () => {
-      return await User.find({});
+      return await User.find({}).populate('reviews');
   },
   },
   Mutation: {
